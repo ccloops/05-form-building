@@ -74,7 +74,7 @@ articleView.setTeasers = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is being called in the new.html file so that it will run once the html has loaded.
 articleView.initNewArticlePage = () => {
   // DONE: Ensure the main .tab-content area is revealed. We might add more tabs later or otherwise edit the tab navigation.
   $('.tab-content').show();
@@ -113,7 +113,7 @@ articleView.create = () => {
 
   // DONE: Use our interface to the Handblebars template to put this new article into the DOM:
 
-  $('#articles').append(article.toHtml());
+  $('#articles').append(newArticle.toHtml());
 
 
   // DONE: Activate the highlighting of any code blocks; look at the documentation for hljs to see how to do this by placing a callback function in the .each():
@@ -128,13 +128,12 @@ articleView.create = () => {
 };
 
 // COMMENT: Where is this function called? Why?
-// PUT YOUR RESPONSE HERE
+// This function is called in index.html because we are no longer calling a document.ready function. By calling the function in the index.html file, we are asking the computer to call the function after the html has loaded.
 articleView.initIndexPage = () => {
-  articles.forEach(article => $('#articles').append(article.toHtml()));
+  articles.forEach(article =>  $('#articles').append(article.toHtml())); //eslint-disable-line
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-  // articleView.initNewArticlePage(); Call in html
 };
