@@ -92,6 +92,9 @@ articleView.initNewArticlePage = () => {
   //don't invoke the callback so that it will be called on 'change'
   $('#new-form').on('change', 'input, textarea', articleView.create);
 
+  articleView.handleMainNav();
+  articleView.setTeasers();
+
 };
 
 articleView.create = () => {
@@ -136,4 +139,5 @@ articleView.initIndexPage = () => {
   articleView.handleAuthorFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
+  hljs.initHighLightingOnLoad();
 };
